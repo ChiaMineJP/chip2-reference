@@ -72,4 +72,4 @@ gen
 
 web-ext-artifacts/*
 
-src/key.pem
+*.pem

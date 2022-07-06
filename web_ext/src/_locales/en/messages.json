@@ -1,0 +1,13 @@
+{
+  "extensionName": {
+    "message": "CHIP-2 demo",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Demo of CHIP-2 compatible browser wallet",
+    "description": "Description of the extension."
+  },
+  "homepageUrl": {
+    "message": "https://github.com/ChiaMineJP/chip2-reference"
+  }
+}

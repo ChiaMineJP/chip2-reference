@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "version": "0.0.1",
+
+  "default_locale": "en",
+  "description": "__MSG_extensionDescription__",
+  "icons": {
+    "32": "icon/icon32.png",
+    "128": "icon/icon128.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "32": "icon/icon32.png"
+    },
+    "default_title": "__MSG_extensionName__",
+    "default_popup": "popup/index.html"
+  },
+
+  "background": {
+    "service_worker": "background/index.js",
+    "type": "module"
+  },
+
+  "author": "ChiaMineJP",
+  "content_scripts": [{
+    "matches": ["https://*/*"],
+    "js": [
+      "content-script/index.js"
+    ],
+    "run_at": "document_end"
+  }],
+  "homepage_url": "https://github.com/ChiaMineJP/chip2-reference",
+  "incognito": "spanning",
+  "minimum_chrome_version": "47",
+  "offline_enabled": false,
+  "permissions": [
+    "tabs"
+  ],
+  "short_name": "chip2-reference",
+  "version_name": "0.0.1",
+  "web_accessible_resources": [
+    {
+      "resources": ["content-script/inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

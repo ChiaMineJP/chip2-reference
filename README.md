@@ -1,1 +1,1 @@
-# CHIP-2 sample
+# CHIP2 reference

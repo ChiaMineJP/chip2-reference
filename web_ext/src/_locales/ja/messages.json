@@ -1,0 +1,13 @@
+{
+  "extensionName": {
+    "message": "CHIP-2 デモ",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "CHIP-2 互換ブラウザウォレットのデモ",
+    "description": "Description of the extension."
+  },
+  "homepageUrl": {
+    "message": "https://github.com/ChiaMineJP/chip2-reference"
+  }
+}
