@@ -5,14 +5,14 @@ async function prepareButton(){
   const button = document.querySelector("#jump-button");
   button.addEventListener("click", () => {
     chrome.tabs.query({
-      url: ["https://github.com/ChiaMineJP/*"],
+      url: ["https://github.com/ChiaMineJP/chip2-reference"],
     }, (tabs) => {
       if(tabs.length > 0){
         const tab = tabs[0];
         chrome.tabs.update(tab.id, {active: true});
       }
       else{
-        chrome.tabs.create({url: "https://github.com/ChiaMineJP"});
+        chrome.tabs.create({url: "https://github.com/ChiaMineJP/chip2-reference"});
       }
     });
   });
