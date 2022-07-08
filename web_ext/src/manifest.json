@@ -19,8 +19,7 @@
   },
 
   "background": {
-    "service_worker": "background/index.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
 
   "author": "ChiaMineJP",

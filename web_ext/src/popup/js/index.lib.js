@@ -1,9 +1,9 @@
-async function prepareButton(){
+function prepareButton(){
   // Set page jump button behaviour.
   // When there are tabs which shows a specific page, jump to the page
   // on button click. Otherwise, it creates a new tab for the page and jump to it.
-  const button = document.querySelector("#jump-button");
-  button.addEventListener("click", () => {
+  const buttonEl = document.querySelector("#jump-button");
+  buttonEl.addEventListener("click", () => {
     chrome.tabs.query({
       url: ["https://github.com/ChiaMineJP/chip2-reference"],
     }, (tabs) => {
@@ -16,4 +16,32 @@ async function prepareButton(){
       }
     });
   });
+}
+
+function prepareChainSelector(){
+  const selectEl = document.getElementById("chainId-selector");
+  const optionsEl = selectEl.querySelectorAll("option");
+  let prevValue = "";
+  
+  function changeSelected(value){
+    chrome.runtime.sendMessage({
+      method: "setChainId",
+      params: {chainId: value},
+    });
+    
+    optionsEl.forEach(optionEl => {
+      if(optionEl.value === value){
+        optionEl.setAttribute("selected", "true");
+      }
+      else{
+        optionEl.removeAttribute("selected");
+      }
+    });
+  }
+  
+  selectEl.onchange = function(event){
+    const newValue = event.currentTarget.value;
+    changeSelected(newValue);
+    prevValue = newValue;
+  };
 }

@@ -11,11 +11,21 @@
   <div class="title">
     CHIP-2 compatible browser wallet sample
   </div>
-  <p>
-    You can write and render HTML here.
-  </p>
-  <div id="jump-button">
-    Go to ChiaMineJP's GitHub
+  <div class="config-container">
+    <div class="config-item">
+      <label for="chainId-selector">Chain</label>
+      <select id="chainId-selector">
+        <option value="">-- Choose chain --</option>
+        <option value="mainnet">Chia Mainnet</option>
+        <option value="testnet10">Chia Testnet10</option>
+      </select>
+    </div>
+  </div>
+  <div class="button-container">
+    <div id="jump-button">
+      Check source
+      <img src="./img/arrow-up-right-from-square.svg" width="12" alt="" />
+    </div>
   </div>
 </main>
 <script src="js/index.js"></script>

@@ -21,6 +21,29 @@ body > main {
   font-weight: 600;
 }
 
+.config-container {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.config-item {
+  padding: 8px;
+}
+.config-item > label:first-child {
+}
+.config-item > *:nth-child(2) {
+  margin-left: 16px;
+}
+
+select {
+  padding: 4px 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #jump-button {
   border: 1px solid #aaa;
   border-radius: 5px;
@@ -30,6 +53,12 @@ body > main {
   text-align: center;
   cursor: pointer;
   transition: all ease .2s;
+  display: flex;
+  align-items: center;
+}
+
+#jump-button > img {
+  margin-left: 8px;
 }
 
 #jump-button:hover {

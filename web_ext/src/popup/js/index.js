@@ -1,5 +1,6 @@
 async function main(){
-  return prepareButton();
+  prepareButton();
+  prepareChainSelector();
 }
 
 main().catch(error => { console.error(error); });
