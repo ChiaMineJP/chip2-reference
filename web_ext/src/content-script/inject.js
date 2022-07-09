@@ -72,17 +72,17 @@ window.chia = function(){
     }
     
     if(responseData.type === "event"){
-      const {name, data} = responseData;
+      const {name, args} = responseData.data;
       const listeners = eventListeners[name];
       if(listeners){
-        listeners.forEach(function(listener){
+        for(const listener of listeners){
           try{
-            listener.apply(listener, data);
+            listener.apply(listener, args);
           }
           catch(e){
             console.error("Event listener failed", e);
           }
-        });
+        }
       }
     }
     else if(responseData.type === "response"){

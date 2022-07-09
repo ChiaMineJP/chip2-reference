@@ -44,4 +44,17 @@ function prepareChainSelector(){
     changeSelected(newValue);
     prevValue = newValue;
   };
+  
+  const getChainIdRequest = {
+    method: "getChainId",
+  };
+  chrome.runtime.sendMessage(getChainIdRequest, function(responseFromBackground){
+    const {error, data} = responseFromBackground;
+    if(error){
+      console.error(error);
+      return;
+    }
+    const {chainId} = data;
+    changeSelected(chainId);
+  });
 }

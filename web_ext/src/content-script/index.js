@@ -86,6 +86,36 @@ function createServer(){
       }
   
       const {name} = req.data;
+      const message = {
+        type: "register",
+        data: {name: name},
+      };
+      chrome.runtime.sendMessage(message, function(response){
+        // console.log(response);
+      });
+    }
+  });
+  
+  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse){
+    if(
+      sender.id !== chrome.runtime.id
+      || !message
+      || typeof message !== "object"
+    ){
+      return;
+    }
+    
+    if(message.type === "event"){
+      const {data} = message;
+      const response = {
+        type: "event",
+        to: dAppOriginName,
+        origin: browserWalletName,
+        data: data,
+        error: null,
+      };
+  
+      window.postMessage(response);
     }
   });
 }
